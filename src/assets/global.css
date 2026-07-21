@@ -1,0 +1,182 @@
+/* ============================================
+   Live Chat — Global Styles
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* keep the view and the login/signup wrappers full width
+   so the form cards can center themselves properly */
+#app > div,
+#app > div > div {
+  width: 100%;
+}
+
+/* ---------- Welcome heading ---------- */
+h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+h1::after {
+  content: ' 💬';
+}
+
+/* ---------- Login / Sign Up form cards ---------- */
+form {
+  width: 100%;
+  max-width: 480px;
+  margin: 16px auto;
+  padding: 40px 44px;
+  text-align: left;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(30, 20, 70, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #4b3f72;
+}
+
+/* small accent line under the form title */
+form h2::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 4px;
+  margin: 10px auto 4px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+form input {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #2d2d3a;
+  background: #f8f9fd;
+  border: 1.5px solid #d7dbe8;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+form input:hover {
+  border-color: #b3bad4;
+}
+
+form input:focus {
+  background: #fff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.18);
+}
+
+form input::placeholder {
+  color: #a5aabb;
+}
+
+form button {
+  margin-top: 26px;
+  padding: 14px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(80, 60, 160, 0.45);
+}
+
+form button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(80, 60, 160, 0.35);
+}
+
+/* ---------- Login / Sign Up toggle line ---------- */
+p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+p button {
+  padding: 0;
+  margin-left: 6px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: #ffd76a;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+p button:hover {
+  color: #ffe59a;
+  border-bottom-color: #ffe59a;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 540px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    padding: 30px 24px;
+    border-radius: 14px;
+  }
+}
