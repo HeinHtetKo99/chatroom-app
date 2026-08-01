@@ -8,28 +8,43 @@
     <label for="password">Password</label>
     <input type="password" id="password" v-model="password" required>
     <button type="submit">Sing Up</button>
+    <p v-if="error" class="auth-error" role="alert">{{ error }}</p>
   </form>
 </template>
 
 <script>
 import { ref } from 'vue';
+import useSingup from '@/composables/useSingup';
+
 export default {
-    setup() {
+    setup(props, context) {
         let displayName = ref('');
         let email = ref('');
         let password = ref('');
-        let handleSubmit = () => {
-            console.log(displayName.value, email.value, password.value);
+        let {error, handleSingup} = useSingup();
+        
+        let handleSubmit = async () => {
+            let user = await handleSingup(email.value, password.value, displayName.value);
+            if(user) {
+                context.emit('enterChatroom');
+            }
         }
+
         return {
             displayName,
             email,
-            password
+            password,
+            error,
+            handleSubmit
         }
     }
 }
 </script>
 
 <style>
-
+  .auth-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
 </style>

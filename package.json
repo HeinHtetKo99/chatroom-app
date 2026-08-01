@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "node init && vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "date-fns": "^4.4.0",
     "firebase": "^12.16.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
